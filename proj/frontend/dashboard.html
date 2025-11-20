@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Controle Financeiro</h1>
+        <p class="p1">Seus Gastos nas suas mãos</p>
+    </header>
+
+    <main>
+        <section class="sec1">
+            <h2>Divisão de gastos:</h2>
+            <input class="rect" placeholder="Digite algo...">
+            <p>
+                <button class="btadd">Adicionar</button>
+                <button class="btdel">Remover</button>
+                <button class="btupd">Editar</button>
+            </p>
+        </section>
+
+        <section class="sec2">
+            <h2>Listagem de gastos</h2>
+            <ul id="listaGastos"></ul>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Título</h3>
+            <input type="text" id="modalInput" placeholder="Digite aqui">
+            <button id="modalSave">Salvar</button>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

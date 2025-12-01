@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <div class="main-wrapper">
+        <!-- Título -->
+        <header>
+            <h1 class="titulo">Finan Corp</h1>
+            <button class="btLogoff" id="btLogoff"></button>
+            <p class="bvUser">Bem vindo <span id="nomeEncontrado"></span></p>
+        </header>
+
+        <!-- Painel de ações -->
+        <section class="panel">
+            <button class="btadd"></button>
+            <button id="btFiltro" class="btFiltro"></button>
+        </section>
+
+        <!-- Tabela de gastos -->
+        <section class="sec2">
+            <div class="table-wrapper">
+                <table id="tabelaGastos">
+                    <thead>
+                        <tr id="tb-header" class="tb-header" >
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>CPF</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalcrud" class="modalcrud">
+        <div class="modalcrud-content">
+            <span class="close">&times;</span>
+            <h3 id="modalcrudTitle">Título</h3>
+            <input type="hidden" id="ID">
+            <input type="text" id="Desc" placeholder="Descrição">
+            <input type="text" id="Amount" placeholder="Valor">
+            <input type="date" id="dtGasto" placeholder="Data Gasto">
+            <select id="comboTipoGasto"></select>
+            <button id="modalcrudSave" class="ModalSave">Salvar</button>
+        </div>
+    </div>
+    <div id="modalFiltro" class="modalFiltro">
+        <div class ="modalFiltro-content">
+            <span class="closeFiltro">&times;</span>
+            <h3 id="modalFiltroTitle">Título</h3>
+            <input type="date" id="dtIni" placeholder="Data Inicio">
+            <input type="date" id="dtFim" placeholder="Data Fim">
+            <button id="modalFiltroSave" class="ModalSave">Salvar</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

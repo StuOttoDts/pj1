@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalFiltrodtFim = document.getElementById("dtFim");
     const modalFiltroSave  = document.getElementById("modalFiltroSave");
     const closeFiltro = document.querySelector(".closeFiltro");
+    const pie = document.querySelector("#pie");
+    const p = document.getElementById("percent").value;
 
     if (nomeLogado) {
         document.getElementById("nomeEncontrado").textContent = nomeLogado;
@@ -218,5 +220,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     combo.appendChild(opt);
                 });
             });
+    }
+    function updatePie() {
+        
+  
+        if (p >= 0 && p <= 100) {
+            pie.style.setProperty("--p", p);
+            pie.textContent = p + "%";
+        }
     }
 });

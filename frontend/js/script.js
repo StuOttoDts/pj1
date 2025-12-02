@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalFiltroSave  = document.getElementById("modalFiltroSave");
     const closeFiltro = document.querySelector(".closeFiltro");
     const pie = document.querySelector("#pie");
-    const p = document.getElementById("percent").value;
+    //const p = document.getElementById("percent").value;
 
     if (nomeLogado) {
         document.getElementById("nomeEncontrado").textContent = nomeLogado;
@@ -35,14 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let gastos = [];
     let currentAction = "";
     let currentIndex = null;
-
-    // =============================
-    //   BUSCAR GASTOS (JSON + GET)
-    // =============================
-    async function carregarGastos() {
-        const res = await fetch(`http://localhost:8080/BuscarGasto?cpf=${cpfUsuario}&dtIni=${dtIni}&dtFim=${dtFim}`);
-        gastos = await res.json();
-    }
 
     // =============================
     //   LISTAR NA TABELA
@@ -96,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ADD / EDIT modalcrud
     // =============================
     btLogoff.addEventListener("click", () => {
+        alert('Deslogando...');
         window.location.href = 'index.html';
     });
     carregarTiposGasto();

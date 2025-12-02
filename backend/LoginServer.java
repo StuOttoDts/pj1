@@ -56,9 +56,9 @@ public class LoginServer {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
 
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=ProjetinhoContas;encrypt=false;trustServerCertificate=true;";
-        String dbUser = "sa";
-        String dbPass = "1234";
+        String url = "jdbc:sqlserver://dbfc.database.windows.net:1433;database=FinanCorp;user=otto@dbfc;password=Exc@l!8uR;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+        String dbUser = "otto";
+        String dbPass = "Exc@l!8uR";
 
 
         // ==================================================================
@@ -249,11 +249,12 @@ public class LoginServer {
 
                 try (Connection con = DriverManager.getConnection(url, dbUser, dbPass);
                      PreparedStatement stmt = con.prepareStatement(
-                         "INSERT INTO Usuarios (nomeUsuar, cpf, senha) VALUES (?, ?, ?)")) {
+                         "INSERT INTO Usuarios (nomeUsuar, cpf, senha, dtCriacao) VALUES (?, ?, ?, ?)")) {
 
                     stmt.setString(1, data.nome);
                     stmt.setString(2, data.cpf);
                     stmt.setString(3, data.senha);
+                    stmt.setObject(4, java.time.LocalDate.now());
                     stmt.executeUpdate();
                 }
 

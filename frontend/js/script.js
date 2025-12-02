@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalFiltroSave  = document.getElementById("modalFiltroSave");
     const closeFiltro = document.querySelector(".closeFiltro");
     const pie = document.querySelector("#pie");
+    const btCategorias = document.getElementById("btCategorias");
     //const p = document.getElementById("percent").value;
 
     if (nomeLogado) {

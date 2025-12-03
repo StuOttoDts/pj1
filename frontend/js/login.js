@@ -35,8 +35,6 @@ loginBtn.addEventListener('click', async () => {
             localStorage.setItem("dtIni", dtIni.toISOString().split("T")[0]);
             localStorage.setItem("dtFim", dtFim.toISOString().split("T")[0]);
 
-            alert(localStorage.getItem("dtIni") + " - " + localStorage.getItem("dtFim"));
-
             window.location.href = 'dashboard.html';
 
         } else {
